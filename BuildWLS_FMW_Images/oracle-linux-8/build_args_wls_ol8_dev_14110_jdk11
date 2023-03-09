@@ -1,0 +1,11 @@
+create 
+--tag=middleware/weblogic:14.1.1.0-dev-11-ol8
+--additionalBuildCommands=/Users/mriccell/ImageTool/BuildWLS_FMW_Images/wls-cmds.txt
+--additionalBuildFiles=/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/14.1.1.0/container-scripts/create-wls-domain.py,/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/14.1.1.0/container-scripts/createAndStartEmptyDomain.sh,/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/12.2.1.3/container-scripts/get_healthcheck_url.sh
+--type=wlsdev
+--fromImage=container-registry.oracle.com/os/oraclelinux:8-slim
+--chown=oracle:root
+--user=monica.riccelli@oracle.com
+--passwordEnv=MYPWD
+--version=14.1.1.0.0
+--jdkVersion=11.0.9

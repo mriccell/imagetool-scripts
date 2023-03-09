@@ -1,0 +1,11 @@
+create 
+--tag=oracle/weblogic:12.2.1.4
+--additionalBuildCommands=/Users/mriccell/ImageTool/BuildWLS_FMW_Images/wls-cmds.txt
+--additionalBuildFiles=/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/12.2.1.4/container-scripts/create-wls-domain.py,/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/12.2.1.4/container-scripts/createAndStartEmptyDomain.sh,/Users/mriccell/Docker/docker-images/OracleWebLogic/dockerfiles/12.2.1.3/container-scripts/get_healthcheck_url.sh,/Users/mriccell/ImageTool/BuildWLS_FMW_Images/wls-exporter.war
+--type=wls
+--pull
+--chown=oracle:root
+--user=user.name@web.com
+--passwordEnv=MYPWD
+--version=12.2.1.4.0
+--jdkVersion=8u271

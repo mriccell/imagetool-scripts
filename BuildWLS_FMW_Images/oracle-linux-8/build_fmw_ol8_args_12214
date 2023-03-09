@@ -1,0 +1,10 @@
+create
+--tag=middleware/fmw-infrastructure:12.2.1.4-ol8
+--additionalBuildCommands=/Users/mriccell/ImageTool/BuildWLS_FMW_Images/fmw-cmds.txt
+--additionalBuildFiles=/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/createInfraDomain.py,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/createOrStartInfraDomain.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/startManagedServer.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/waitForAdminServer.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/get_healthcheck_url.sh 
+--type=fmw
+--fromImage=container-registry.oracle.com/os/oraclelinux:8-slim
+--user=monica.riccelli@oracle.com
+--passwordEnv=MYPWD
+--version=12.2.1.4.0
+--jdkVersion=8u271

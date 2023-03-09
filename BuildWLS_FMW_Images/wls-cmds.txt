@@ -1,0 +1,17 @@
+[package-manager-packages]
+glib2 
+[final-build-commands]
+ENV DOMAIN_NAME="${DOMAIN_NAME:-base_domain}" \
+    ADMIN_LISTEN_PORT="${ADMIN_LISTEN_PORT:-7001}"  \
+    ADMIN_NAME="${ADMIN_NAME:-AdminServer}" \
+    DEBUG_FLAG=true \
+    PRODUCTION_MODE=dev \
+    ADMINISTRATION_PORT_ENABLED="${ADMINISTRATION_PORT_ENABLED:-true}" \
+    ADMINISTRATION_PORT="${ADMINISTRATION_PORT:-9002}" \
+    HEALTH_SCRIPT_FILE=/u01/oracle/get_healthcheck_url.sh \
+    USER_MEM_ARGS="-Djava.security.egd=file:/dev/./urandom" 
+COPY --chown=oracle:root files/createAndStartEmptyDomain.sh files/create-wls-domain.py files/get_healthcheck_url.sh /u01/oracle/
+HEALTHCHECK --start-period=10s --timeout=30s --retries=3 CMD curl -k -s --fail `$HEALTH_SCRIPT_FILE` || exit 1
+WORKDIR ${ORACLE_HOME}
+CMD ["/u01/oracle/createAndStartEmptyDomain.sh"]
+

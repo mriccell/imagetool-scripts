@@ -1,0 +1,9 @@
+create
+--tag=fmw-infrastructure:12.2.1.4
+--additionalBuildCommands=/Users/mriccell/ImageTool/BuildWLS_FMW_Images/fmw-cmds.txt
+--additionalBuildFiles=/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/createInfraDomain.py,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/createOrStartInfraDomain.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/startManagedServer.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/waitForAdminServer.sh,/Users/mriccell/Docker/docker-images/OracleFMWInfrastructure/dockerfiles/12.2.1.4/container-scripts/get_healthcheck_url.sh 
+--type=fmw
+--pull
+--chown=oracle:root
+--version=12.2.1.4.0
+--jdkVersion=8u351
